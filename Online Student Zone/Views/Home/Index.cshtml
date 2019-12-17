@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Online_Student_Zone.Models.Students>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Every Students List. </h1>
+<br />
+<br />
+@Html.ActionLink("Add New Student", "AddStudents","",new {@class="btn btn-primary" })
+<br />
+<br>
+<table class="table table-responsive table-bordered">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>@Html.DisplayNameFor(model => model.Age)</td>
+            <td>@Html.DisplayNameFor(model => model.FathersName)</td>
+            <td>@Html.DisplayNameFor(model => model.MothersName)</td>
+            <td>@Html.DisplayNameFor(model => model.CountryName)</td>
+            <td>@Html.DisplayNameFor(model => model.DistrictName)</td>
+            <td>@Html.DisplayNameFor(model => model.UpazilaName)</td>
+            <td>@Html.DisplayNameFor(model => model.PostCode)</td>
+            <td>@Html.DisplayNameFor(model => model.ContactNo)</td>
+            <td>@Html.DisplayNameFor(model => model.EmailId)</td>
+            <td>@Html.DisplayNameFor(model => model.ClassName)</td>
+            <td>@Html.DisplayNameFor(model => model.DateOfBirth)</td>
+        </tr>
+    </thead>
+   @{ 
+       foreach (var item in Model)
+       {
+           <tbody>
+                  <tr>
+                      <td>@Html.DisplayFor(modelitem => item.FirstName)&nbsp; @Html.DisplayFor(modelitem => item.LastName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.Age)</td>
+                      <td>@Html.DisplayFor(modelitem => item.FathersName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.MothersName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.CountryName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.DistrictName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.UpazilaName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.PostCode)</td>
+                      <td>@Html.DisplayFor(modelitem => item.ContactNo)</td>
+                      <td>@Html.DisplayFor(modelitem => item.EmailId)</td>                      
+                      <td>@Html.DisplayFor(modelitem => item.ClassName)</td>
+                      <td>@Html.DisplayFor(modelitem => item.DateOfBirth)</td>
+                  </tr>
+           </tbody>
+       }
+   }
+</table>
+
